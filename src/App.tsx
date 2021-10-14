@@ -17,8 +17,12 @@ function App() {
 
   return (
     <div>
-      <NewTodoComponent onAddTodo={onAddTodo} />
-      <TodosComponent items={todos} />
+      <NewTodoComponent
+        onAddTodo={onAddTodo}
+      />
+      <TodosComponent
+        items={todos}
+      />
     </div>
   );
 }
