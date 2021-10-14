@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Todo } from "../models/todo";
 import classes from './NewTodoComponent.module.css';
 

@@ -15,6 +15,12 @@ function App() {
     });
   };
 
+  const onRemoveTodo = (removee: Todo) => {
+    setTodos((curr) => {
+      return curr.filter(x => x !== removee);
+    });
+  };
+
   return (
     <div>
       <NewTodoComponent
@@ -22,6 +28,7 @@ function App() {
       />
       <TodosComponent
         items={todos}
+        onTodoClick={onRemoveTodo}
       />
     </div>
   );

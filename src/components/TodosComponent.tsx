@@ -8,8 +8,13 @@ const TodosComponent: React.FC<TodosProps> = (props) => {
       <h1>hi</h1>
       <ul className={classes.todos}>
         {props.items.map((item, i) => (
-          <li key={item.id}>
-            <TodoComponent item={item} />
+          <li
+            key={item.id}
+          >
+            <TodoComponent
+              item={item}
+              onTodoClick={props.onTodoClick.bind(null, item)}
+            />
           </li>
         ))}
       </ul>
@@ -19,6 +24,7 @@ const TodosComponent: React.FC<TodosProps> = (props) => {
 
 interface TodosProps {
   readonly items: Todo[];
+  onTodoClick(removee: Todo): void;
 }
 
 export default TodosComponent;
