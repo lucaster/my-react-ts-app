@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Todo } from "../models/todo";
+import classes from './NewTodoComponent.module.css';
 
 const NewTodoComponent: React.FC<NewTodoProps> = (props: NewTodoProps) => {
 
@@ -20,13 +21,13 @@ const NewTodoComponent: React.FC<NewTodoProps> = (props: NewTodoProps) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className={classes.newTodo}>
       <fieldset>
         <legend>New Todo data</legend>
 
         <label>Text</label>
-        <input 
-          name="text" 
+        <input
+          name="text"
           ref={textInputRef}
         />
         <button>Add Todo</button>
