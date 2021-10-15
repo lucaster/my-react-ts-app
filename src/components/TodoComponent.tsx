@@ -2,22 +2,22 @@ import { Todo } from '../models/todo';
 import classes from './TodoComponent.module.css';
 
 const TodoComponent: React.FC<TodoProps> = (props) => {
-  const item = props.item;
+  const todo = props.todo;
   const onTodoClick = (event: React.MouseEvent) => {
-    props.onTodoClick(item);
+    props.onTodoClick(todo);
   };
   return (
     <span
       className={classes.todo}
       onClick={onTodoClick}
     >
-      ({item.id}) {item.text}
+      ({todo.id}) {todo.text}
     </span>
   );
 };
 
 interface TodoProps {
-  readonly item: Todo;
+  readonly todo: Todo;
   onTodoClick(removee: Todo): void;
 }
 

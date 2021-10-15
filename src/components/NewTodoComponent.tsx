@@ -1,8 +1,11 @@
-import { useRef } from "react";
+import { useContext, useRef } from 'react';
 import { Todo } from "../models/todo";
+import { TodosContext } from "../store/todos-context";
 import classes from './NewTodoComponent.module.css';
 
-const NewTodoComponent: React.FC<NewTodoProps> = (props: NewTodoProps) => {
+const NewTodoComponent: React.FC = () => {
+
+  const todosContext = useContext(TodosContext);
 
   const textInputRef = useRef<HTMLInputElement>(null);
 
@@ -17,14 +20,13 @@ const NewTodoComponent: React.FC<NewTodoProps> = (props: NewTodoProps) => {
       id: new Date().getTime().toString(),
       text: text
     };
-    props.onAddTodo(newTodo);
+    todosContext.addTodo(newTodo);
   };
 
   return (
     <form onSubmit={onSubmit} className={classes.newTodo}>
       <fieldset>
         <legend>New Todo data</legend>
-
         <label>Text</label>
         <input
           name="text"
@@ -35,9 +37,5 @@ const NewTodoComponent: React.FC<NewTodoProps> = (props: NewTodoProps) => {
     </form>
   );
 };
-
-interface NewTodoProps {
-  onAddTodo(newTodo: Todo): void;
-}
 
 export default NewTodoComponent;
