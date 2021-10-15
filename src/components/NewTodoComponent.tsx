@@ -1,11 +1,16 @@
 import { useContext, useRef } from 'react';
 import { Todo } from "../models/todo";
+import { ServicesContext } from '../store/services-context';
 import { TodosContext } from "../store/todos-context";
 import classes from './NewTodoComponent.module.css';
 
 const NewTodoComponent: React.FC = () => {
 
+  const services = useContext(ServicesContext);
+
   const todosContext = useContext(TodosContext);
+
+  const asd = services.translateService('translate me!');
 
   const textInputRef = useRef<HTMLInputElement>(null);
 
@@ -25,6 +30,7 @@ const NewTodoComponent: React.FC = () => {
 
   return (
     <form onSubmit={onSubmit} className={classes.newTodo}>
+      <h2>NewTodo: {asd}</h2>
       <fieldset>
         <legend>New Todo data</legend>
         <label>Text</label>
