@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Todo } from '../models/todo';
 
+/**
+ * The "state", with its data and methods to change it.
+ * It is actually a proxy to the TodosContextProviderComponent,
+ * which does the real work.
+ */
 export const TodosContext = React.createContext<TodosState>({
   todos: [],
   addTodo: (newTodo: Todo) => {},
@@ -13,6 +18,9 @@ interface TodosState {
   removeTodo(removee: Todo): void;
 }
 
+/**
+ * This "is" the "concrete" "state"
+ */
 const TodosContextProviderComponent: React.FC = (props) => {
 
   const initialState: Todo[] = [];
