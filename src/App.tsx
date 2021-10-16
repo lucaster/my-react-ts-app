@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 import './App.css';
 import NewTodoComponent from './components/NewTodoComponent';
 import TodosComponent from './components/TodosComponent';
@@ -24,6 +24,10 @@ function App() {
       <div>
         <h1>Routing:</h1>
         <BrowserRouter>
+          <a href="welcome">anchor to welcome</a> <br />
+          <a href="products">anchor to products</a> <br />
+          <Link to="welcome">Link to welcome</Link> <br />
+          <Link to="products">Link to products</Link> <br />
           <Route path="/welcome">
             <WelcomeComponent />
           </Route>
