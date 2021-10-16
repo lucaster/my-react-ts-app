@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter, Link, NavLink, Route } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
 import './App.css';
 import NewTodoComponent from './components/NewTodoComponent';
 import TodosComponent from './components/TodosComponent';
@@ -35,22 +34,36 @@ function App() {
               <Link to="products">Link to products</Link> <br />
               <Link to="/welcome">Link to /welcome</Link> <br />
               <Link to="/products">Link to /products</Link> <br />
-              <NavLink to="welcome" activeClassName={'active'}>NavLink to welcome</NavLink> <br />
-              <NavLink to="products" activeClassName={'active'}>NavLink to products</NavLink> <br />
-              <NavLink to="/welcome" activeClassName={'active'}>NavLink to /welcome</NavLink> <br />
-              <NavLink to="/products" activeClassName={'active'}>NavLink to /products</NavLink> <br />
+              <NavLink to="welcome" activeClassName={'active'}>
+                NavLink to welcome
+              </NavLink>{' '}
+              <br />
+              <NavLink to="products" activeClassName={'active'}>
+                NavLink to products
+              </NavLink>{' '}
+              <br />
+              <NavLink to="/welcome" activeClassName={'active'}>
+                NavLink to /welcome
+              </NavLink>{' '}
+              <br />
+              <NavLink to="/products" activeClassName={'active'}>
+                NavLink to /products
+              </NavLink>{' '}
+              <br />
             </nav>
           </header>
           <main>
-            <Route path="/welcome">
-              <WelcomeComponent />
-            </Route>
-            <Route path="/products">
-              <ProductsComponent />
-            </Route>
-            <Route path="/products/:productId">
-              <ProductDetailComponent />
-            </Route>
+            <Switch>
+              <Route path="/welcome">
+                <WelcomeComponent />
+              </Route>
+              <Route path="/products/:productId">
+                <ProductDetailComponent />
+              </Route>
+              <Route path="/products">
+                <ProductsComponent />
+              </Route>
+            </Switch>
           </main>
         </BrowserRouter>
       </div>
