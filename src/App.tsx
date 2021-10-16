@@ -24,20 +24,26 @@ function App() {
       <div>
         <h1>Routing:</h1>
         <BrowserRouter>
-          <a href="welcome">anchor to welcome</a> <br />
-          <a href="products">anchor to products</a> <br />
-          <a href="/welcome">anchor to /welcome</a> <br />
-          <a href="/products">anchor to /products</a> <br />
-          <Link to="welcome">Link to welcome</Link> <br />
-          <Link to="products">Link to products</Link> <br />
-          <Link to="/welcome">Link to /welcome</Link> <br />
-          <Link to="/products">Link to /products</Link> <br />
-          <Route path="/welcome">
-            <WelcomeComponent />
-          </Route>
-          <Route path="/products">
-            <ProductsComponent />
-          </Route>
+          <header>
+            <nav>
+              <a href="welcome">anchor to welcome</a> <br />
+              <a href="products">anchor to products</a> <br />
+              <a href="/welcome">anchor to /welcome</a> <br />
+              <a href="/products">anchor to /products</a> <br />
+              <Link to="welcome">Link to welcome</Link> <br />
+              <Link to="products">Link to products</Link> <br />
+              <Link to="/welcome">Link to /welcome</Link> <br />
+              <Link to="/products">Link to /products</Link> <br />
+            </nav>
+          </header>
+          <main>
+            <Route path="/welcome">
+              <WelcomeComponent />
+            </Route>
+            <Route path="/products">
+              <ProductsComponent />
+            </Route>
+          </main>
         </BrowserRouter>
       </div>
     </div>
