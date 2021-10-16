@@ -57,11 +57,11 @@ function App() {
               <Route path="/welcome">
                 <WelcomeComponent />
               </Route>
+              <Route path="/products" exact>
+                <ProductsComponent />
+              </Route>
               <Route path="/products/:productId">
                 <ProductDetailComponent />
-              </Route>
-              <Route path="/products">
-                <ProductsComponent />
               </Route>
             </Switch>
           </main>
