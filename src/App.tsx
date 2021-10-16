@@ -48,7 +48,7 @@ function App() {
             <Route path="/products">
               <ProductsComponent />
             </Route>
-            <Route path="/product-detail/:productId">
+            <Route path="/products/:productId">
               <ProductDetailComponent
 
               />
