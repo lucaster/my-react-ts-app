@@ -10,7 +10,7 @@ import TodosContextProviderComponent from './store/todos-context';
 
 function App() {
   return (
-    <div>
+    <>
       <div>
         <h1>Todos</h1>
         <ServicesContextProviderComponent>
@@ -70,7 +70,7 @@ function App() {
           </main>
         </BrowserRouter>
       </div>
-    </div>
+    </>
   );
 }
 
