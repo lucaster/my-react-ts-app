@@ -34,22 +34,10 @@ function App() {
               <Link to="products">Link to products</Link> <br />
               <Link to="/welcome">Link to /welcome</Link> <br />
               <Link to="/products">Link to /products</Link> <br />
-              <NavLink to="welcome" activeClassName={'active'}>
-                NavLink to welcome
-              </NavLink>{' '}
-              <br />
-              <NavLink to="products" activeClassName={'active'}>
-                NavLink to products
-              </NavLink>{' '}
-              <br />
-              <NavLink to="/welcome" activeClassName={'active'}>
-                NavLink to /welcome
-              </NavLink>{' '}
-              <br />
-              <NavLink to="/products" activeClassName={'active'}>
-                NavLink to /products
-              </NavLink>{' '}
-              <br />
+              <NavLink to="welcome" activeClassName={'active'}>NavLink to welcome</NavLink> <br />
+              <NavLink to="products" activeClassName={'active'}>NavLink to products</NavLink> <br />
+              <NavLink to="/welcome" activeClassName={'active'}>NavLink to /welcome</NavLink> <br />
+              <NavLink to="/products" activeClassName={'active'}>NavLink to /products</NavLink> <br />
             </nav>
           </header>
           <main>
