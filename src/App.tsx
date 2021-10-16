@@ -3,6 +3,7 @@ import { BrowserRouter, Link, NavLink, Route } from 'react-router-dom';
 import './App.css';
 import NewTodoComponent from './components/NewTodoComponent';
 import TodosComponent from './components/TodosComponent';
+import ProductDetailComponent from './pages/products/ProductDetailComponent';
 import ProductsComponent from './pages/products/ProductsComponent';
 import WelcomeComponent from './pages/welcome/WelcomeComponent';
 import ServicesContextProviderComponent from './store/services-context';
@@ -46,6 +47,11 @@ function App() {
             </Route>
             <Route path="/products">
               <ProductsComponent />
+            </Route>
+            <Route path="/product-detail/:productId">
+              <ProductDetailComponent
+
+              />
             </Route>
           </main>
         </BrowserRouter>
