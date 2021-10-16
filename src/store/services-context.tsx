@@ -1,28 +1,20 @@
 import React, { useState } from 'react';
 
-const NULL_SERVICES_STATE: Services = {
-  translateService: (message) => '',
+const SERVICES: Services = {
+  translateService: (message) => {
+    console.log('translateService', message);
+    return message;
+  },
 };
 
-export const ServicesContext = React.createContext(NULL_SERVICES_STATE);
+export const ServicesContext = React.createContext(SERVICES);
 
 const ServicesContextProviderComponent: React.FC = (props) => {
 
-  const initialState: Services = {
-    translateService: (message) => {
-      console.log('translateService', message);
-      return message;
-    },
-  };
-
-  const [services] = useState(initialState);
-
-  const contextValue: Services = {
-    ...services,
-  };
+  const [services] = useState(SERVICES);
 
   return (
-    <ServicesContext.Provider value={contextValue}>
+    <ServicesContext.Provider value={services}>
       {props.children}
     </ServicesContext.Provider>
   );
