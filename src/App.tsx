@@ -26,8 +26,12 @@ function App() {
         <BrowserRouter>
           <a href="welcome">anchor to welcome</a> <br />
           <a href="products">anchor to products</a> <br />
+          <a href="/welcome">anchor to /welcome</a> <br />
+          <a href="/products">anchor to /products</a> <br />
           <Link to="welcome">Link to welcome</Link> <br />
           <Link to="products">Link to products</Link> <br />
+          <Link to="/welcome">Link to /welcome</Link> <br />
+          <Link to="/products">Link to /products</Link> <br />
           <Route path="/welcome">
             <WelcomeComponent />
           </Route>
