@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import NewTodoComponent from './components/NewTodoComponent';
 import TodosComponent from './components/TodosComponent';
@@ -54,6 +54,9 @@ function App() {
           </header>
           <main>
             <Switch>
+              <Route path="/" exact>
+                <Redirect to="/welcome" />
+              </Route>
               <Route path="/welcome">
                 <WelcomeComponent />
               </Route>
