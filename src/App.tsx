@@ -49,9 +49,7 @@ function App() {
               <ProductsComponent />
             </Route>
             <Route path="/products/:productId">
-              <ProductDetailComponent
-
-              />
+              <ProductDetailComponent />
             </Route>
           </main>
         </BrowserRouter>
