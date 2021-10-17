@@ -13,6 +13,9 @@ jest.mock('react-router-dom', () => ({
 
 describe('WelcomeComponent', () => {
   it('renders', () => {
+
+    window.fetch = jest.fn().mockResolvedValueOnce('first call response');
+
     render(
       <MemoryRouter initialEntries={['/welcome/new-user']}>
         <WelcomeComponent />
