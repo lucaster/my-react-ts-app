@@ -21,7 +21,9 @@ describe('WelcomeComponent', () => {
 
   it('renders', () => {
 
-    window.fetch = jest.fn().mockResolvedValueOnce('first call response');
+    window.fetch = jest.fn().mockResolvedValueOnce({
+      json: () => ({ a: 'a' })
+    });
 
     render(
       <MemoryRouter initialEntries={['/welcome/new-user']}>
