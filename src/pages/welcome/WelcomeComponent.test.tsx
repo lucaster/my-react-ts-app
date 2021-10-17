@@ -22,7 +22,7 @@ describe('WelcomeComponent', () => {
   it('renders', () => {
 
     window.fetch = jest.fn().mockResolvedValueOnce({
-      json: () => ({ a: 'a' })
+      json: () => ([{ a: 'a' }])
     });
 
     render(
