@@ -12,6 +12,13 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('WelcomeComponent', () => {
+
+  const trueFetch = window.fetch;
+
+  afterEach(() => {
+    window.fetch = trueFetch;
+  });
+
   it('renders', () => {
 
     window.fetch = jest.fn().mockResolvedValueOnce('first call response');
