@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const SERVICES = {
   translateService: (message: string) => {
-    console.log('translateService', message);
     return message;
   },
 };
