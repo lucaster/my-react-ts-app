@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import WelcomeComponent from './WelcomeComponent';
 
 jest.mock('react-router-dom', () => ({
@@ -14,11 +14,13 @@ jest.mock('react-router-dom', () => ({
 describe('WelcomeComponent', () => {
   it('renders', () => {
     render(
-      <BrowserRouter>
+      <MemoryRouter initialEntries={['/welcome/new-user']}>
         <WelcomeComponent />
-      </BrowserRouter>
+      </MemoryRouter>
     );
     const elem = screen.queryByText('The Welcome Page');
     expect(elem).toBeInTheDocument();
+    const elemWithinRoute = screen.queryByText('Welcome new user!');
+    expect(elemWithinRoute).toBeInTheDocument();
   });
 });
