@@ -15,7 +15,7 @@ describe('App', () => {
   });
   test('userEvent example to interact with elements', () => {
     render(<App />);
-    const elem = screen.getByText(/^Todos$/g);
-    userEvent.click(elem);
+    const elem = screen.queryByText(/^Todos$/g);
+    userEvent.click(elem!);
   });
 });
